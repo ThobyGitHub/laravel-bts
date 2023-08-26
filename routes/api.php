@@ -29,3 +29,19 @@ Route::group([
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('register', 'Auth\RegisterController@create');
+
+Route::group([
+
+    'middleware' => 'api',
+
+], function ($router) {
+    
+    Route::get('checklist/{checklist_id}/item/{item_id}', 'ChecklistController@getItemByChecklistId');
+    Route::get('checklist', 'ChecklistController@index');
+    Route::post('checklist', 'ChecklistController@store');
+    Route::put('checklist/{checklist_id}/item/{item_id}', 'ChecklistController@update');
+    Route::delete('checklist/{checklist_id}/item/{item_id}', 'ChecklistController@destroy');
+    Route::put('checklist/{checklist_id}/item/rename/{item_id}', 'ChecklistController@rename');
+});
