@@ -14,7 +14,8 @@
         "laravel/framework": "^6.18.35",
         "laravel/tinker": "^2.0",
         "php-http/guzzle6-adapter": "^2.0",
-        "php-http/httplug-bundle": "^1.19"
+        "php-http/httplug-bundle": "^1.19",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
